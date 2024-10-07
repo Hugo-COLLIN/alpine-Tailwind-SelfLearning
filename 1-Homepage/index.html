@@ -6,8 +6,8 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="https://unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="text-zinc-100">
 <div class="container mx-auto">
@@ -35,35 +35,37 @@
           </svg>
         </a>
 
-        <a href="">
-          <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-               height="32px" id="Layer_1"
-               style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px"
-               xml:space="preserve"><path fill="#fff" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+        <div x-data="{open: false}">
+          <button x-on:click="open = !open">
+            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 height="32px" id="Layer_1"
+                 style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px"
+                 xml:space="preserve"><path fill="#fff" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
           </svg>
-        </a>
+          </button>
 
-        <div class="absolute  left-0 top-0 z-10 p-6 bg-zinc-100 w-4/5 h-full">
-          <div class="flex justify-between mb-16">
-            <p class="text-neutral-500"><span class="font-bold">SCOTT</span> GREEN TEA</p>
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                <title>
-                  close
-                </title>
-                <path d="M4.34 2.93l12.73 12.73-1.41 1.41L2.93 4.35z"/>
-                <path d="M17.07 4.34L4.34 17.07l-1.41-1.41L15.66 2.93z"/>
-              </svg>
-            </button>
-          </div>
+          <div x-show="open" style="display:none;" class="absolute  left-0 top-0 z-10 p-6 bg-zinc-100 w-4/5 h-full">
+            <div class="flex justify-between mb-16">
+              <p class="text-neutral-500"><span class="font-bold">SCOTT</span> GREEN TEA</p>
+              <button x-on:click="open = false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <title>
+                    close
+                  </title>
+                  <path d="M4.34 2.93l12.73 12.73-1.41 1.41L2.93 4.35z"/>
+                  <path d="M17.07 4.34L4.34 17.07l-1.41-1.41L15.66 2.93z"/>
+                </svg>
+              </button>
+            </div>
 
-          <div>
-            <ul class="list-disc text-black font-bold ml-4">
-              <li><a href="" class="p-4 block">Home</a></li>
-              <li><a href="" class="p-4 block">Product</a></li>
-              <li><a href="" class="p-4 block">Shopping cart</a></li>
-              <li><a href="" class="p-4 block">Account</a></li>
-            </ul>
+            <div>
+              <ul class="list-disc text-black font-bold ml-4">
+                <li><a href="" class="p-4 block">Home</a></li>
+                <li><a href="" class="p-4 block">Product</a></li>
+                <li><a href="" class="p-4 block">Shopping cart</a></li>
+                <li><a href="" class="p-4 block">Account</a></li>
+              </ul>
+            </div>
           </div>
 
         </div>
